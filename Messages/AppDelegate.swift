@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewController = MessageViewController()
+        let messageViewController = MessageViewController()
+        let navigationController = UINavigationController(rootViewController: messageViewController)
         if window != nil {
-            window!.rootViewController = homeViewController
+            window!.rootViewController = navigationController
             window!.makeKeyAndVisible()
         } else {
             print("Error loading homeViewController")
         }
+        
         return true
     }
 
