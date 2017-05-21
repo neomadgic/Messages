@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3C71ED213F60055C858 /* AppDelegate.swift */; };
-		76FEF3CA1ED213F60055C858 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3C91ED213F60055C858 /* ViewController.swift */; };
 		76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3CE1ED213F60055C858 /* Messages.xcdatamodeld */; };
 		76FEF3D21ED213F60055C858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FEF3D11ED213F60055C858 /* Assets.xcassets */; };
 		76FEF3D51ED213F60055C858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FEF3D31ED213F60055C858 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		76FEF3C41ED213F60055C858 /* Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FEF3C71ED213F60055C858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76FEF3C91ED213F60055C858 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		76FEF3CF1ED213F60055C858 /* Messages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Messages.xcdatamodel; sourceTree = "<group>"; };
 		76FEF3D11ED213F60055C858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76FEF3D41ED213F60055C858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,12 +75,10 @@
 		76FEF3C61ED213F60055C858 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				76FEF3C71ED213F60055C858 /* AppDelegate.swift */,
-				76FEF3C91ED213F60055C858 /* ViewController.swift */,
-				76FEF3D11ED213F60055C858 /* Assets.xcassets */,
-				76FEF3D31ED213F60055C858 /* LaunchScreen.storyboard */,
-				76FEF3D61ED213F60055C858 /* Info.plist */,
-				76FEF3CE1ED213F60055C858 /* Messages.xcdatamodeld */,
+				76FEF3F11ED217360055C858 /* Essential */,
+				76FEF3F01ED2172F0055C858 /* Controller */,
+				76FEF3EF1ED2172C0055C858 /* Model */,
+				76FEF3EE1ED217270055C858 /* View */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -94,6 +90,39 @@
 				76FEF3E11ED213F60055C858 /* Info.plist */,
 			);
 			path = MessagesTests;
+			sourceTree = "<group>";
+		};
+		76FEF3EE1ED217270055C858 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		76FEF3EF1ED2172C0055C858 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76FEF3F01ED2172F0055C858 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76FEF3F11ED217360055C858 /* Essential */ = {
+			isa = PBXGroup;
+			children = (
+				76FEF3C71ED213F60055C858 /* AppDelegate.swift */,
+				76FEF3D11ED213F60055C858 /* Assets.xcassets */,
+				76FEF3D31ED213F60055C858 /* LaunchScreen.storyboard */,
+				76FEF3D61ED213F60055C858 /* Info.plist */,
+				76FEF3CE1ED213F60055C858 /* Messages.xcdatamodeld */,
+			);
+			name = Essential;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */,
-				76FEF3CA1ED213F60055C858 /* ViewController.swift in Sources */,
 				76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +430,7 @@
 				76FEF3E61ED213F60055C858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76FEF3E71ED213F60055C858 /* Build configuration list for PBXNativeTarget "MessagesTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +439,7 @@
 				76FEF3E91ED213F60055C858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
