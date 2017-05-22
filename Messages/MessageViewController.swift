@@ -10,26 +10,19 @@ import UIKit
 
 class MessageViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.blue
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        
+        self.view.backgroundColor = UIColor.red
+        let messageView = MessageView()
+        messageView.backgroundColor = UIColor.green
+        messageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(messageView)
+        messageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        messageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        messageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        messageView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }

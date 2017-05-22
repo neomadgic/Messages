@@ -13,6 +13,8 @@
 		76FEF3D51ED213F60055C858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FEF3D31ED213F60055C858 /* LaunchScreen.storyboard */; };
 		76FEF3E01ED213F60055C858 /* MessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3DF1ED213F60055C858 /* MessagesTests.swift */; };
 		76FEF3F31ED218C40055C858 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3F21ED218C40055C858 /* MessageViewController.swift */; };
+		76FEF3F51ED22AC40055C858 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3F41ED22AC40055C858 /* MessageTextField.swift */; };
+		76FEF3FB1ED245100055C858 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3FA1ED245100055C858 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		76FEF3DF1ED213F60055C858 /* MessagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTests.swift; sourceTree = "<group>"; };
 		76FEF3E11ED213F60055C858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76FEF3F21ED218C40055C858 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		76FEF3F41ED22AC40055C858 /* MessageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		76FEF3FA1ED245100055C858 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				76FEF3F11ED217360055C858 /* Essential */,
-				76FEF3F01ED2172F0055C858 /* Controller */,
 				76FEF3EF1ED2172C0055C858 /* Model */,
 				76FEF3EE1ED217270055C858 /* View */,
+				76FEF3F01ED2172F0055C858 /* Controller */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -97,6 +101,8 @@
 		76FEF3EE1ED217270055C858 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				76FEF3F41ED22AC40055C858 /* MessageTextField.swift */,
+				76FEF3FA1ED245100055C858 /* MessageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 				76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */,
 				76FEF3F31ED218C40055C858 /* MessageViewController.swift in Sources */,
 				76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */,
+				76FEF3F51ED22AC40055C858 /* MessageTextField.swift in Sources */,
+				76FEF3FB1ED245100055C858 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
