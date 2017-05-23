@@ -23,15 +23,16 @@ class MessageLabel: UILabel {
     func setupLabelSettings() {
         
         numberOfLines = 0
-        backgroundColor = UIColor.blue
+        backgroundColor = UIColor(0x007AFF)
         textColor = UIColor.white
-        layer.cornerRadius = 10.0
+        layer.cornerRadius = 8.0
         clipsToBounds = true
-        font = UIFont(name: "Helvetica", size: 14.0)
+        font = UIFont(name: "Helvetica", size: 16.0)
+        textAlignment = .right
     }
     
     override func drawText(in rect: CGRect) {
-        let insets = UIEdgeInsets.init(top: 5, left: 10, bottom: 5, right: 10)
+        let insets = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
 

@@ -13,20 +13,17 @@ class MessageCell: UITableViewCell {
     func configureCell(with: String) {
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        print(contentView.frame)
         
-        let messageLabel = MessageLabel(frame: CGRect.zero)
+        let messageLabel = MessageLabel(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 40.0))
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(messageLabel)
         
-        messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2.0).isActive = true
-        messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50.0).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0).isActive = true
-        //messageLabel.sizeToFit()
-        
         messageLabel.text = with
         
+        messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2.0).isActive = true
+        messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0).isActive = true
+        messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50.0).isActive = true
     }
 }
