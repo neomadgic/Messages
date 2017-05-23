@@ -28,6 +28,7 @@ class SendButton: UIButton {
         backgroundColor = UIColor.mainGreen
         setTitle("Send", for: .normal)
         setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(UIColor.lightText, for: .highlighted)
         if let defaultSize = titleLabel?.font.pointSize {
             titleLabel?.font = UIFont.systemFont(ofSize: defaultSize, weight: UIFontWeightSemibold)
         }

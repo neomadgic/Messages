@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let messageView = MessageView()
     
@@ -20,6 +20,8 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         messageView.messageTableView.delegate = self
         messageView.messageTableView.dataSource = self
         messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
+        
+        messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: .touchUpInside)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +65,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
+    }
+    
+    func onSendPressed() {
+        print("WE MADE IT")
     }
 }
 

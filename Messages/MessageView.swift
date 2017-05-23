@@ -33,7 +33,7 @@ class MessageView: UIView {
     
     func createAllConstraints() {
         
-        createTextFieldCosntraints()
+        createTextFieldConstraints()
         createTableViewConstraints()
         createSendButtonConstraints()
     }
@@ -46,7 +46,7 @@ class MessageView: UIView {
         messageTableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor, constant: -4.0).isActive = true
     }
     
-    func createTextFieldCosntraints() {
+    func createTextFieldConstraints() {
 
         messageTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4.0).isActive = true
         messageTextField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -8.0).isActive = true
