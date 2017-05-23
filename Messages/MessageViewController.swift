@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     let messageView = MessageView()
     
@@ -19,6 +19,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         createMessageView()
         messageView.messageTableView.delegate = self
         messageView.messageTableView.dataSource = self
+        messageView.messageTextField.delegate = self
         messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
     }
 
@@ -50,7 +51,6 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     //Move View up when keyboard shows
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            print(view.frame.origin.y)
             if self.view.frame.origin.y == 0.0{
                 self.view.frame.origin.y -= keyboardSize.height
             }
@@ -65,26 +65,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-}
     
-//extension MessageViewController {
-//    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        
-//        return 1
-//    }
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        return 15
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-//        
-//        cell.textLabel?.text = "ok"
-//        
-//        return cell
-//    }
-//}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
