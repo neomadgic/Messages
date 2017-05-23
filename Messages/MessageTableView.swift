@@ -25,8 +25,6 @@ class MessageTableView: UITableView {
     func setTableViewSettings() {
         
         translatesAutoresizingMaskIntoConstraints = false
-        
         separatorStyle = .none
     }
-
 }

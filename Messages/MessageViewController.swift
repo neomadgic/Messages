@@ -8,15 +8,17 @@
 
 import UIKit
 
-class MessageViewController: UIViewController {
+class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let messageView = MessageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.cyan
-        createMessageView()
         addKeyboardNotifications()
+        createMessageView()
+        messageView.messageTableView.delegate = self
+        messageView.messageTableView.dataSource = self
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,7 +49,8 @@ class MessageViewController: UIViewController {
     //Move View up when keyboard shows
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
+            print(view.frame.origin.y)
+            if self.view.frame.origin.y == 0.0{
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
@@ -56,10 +59,31 @@ class MessageViewController: UIViewController {
     // Move view down when keyboard shows
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
+            if self.view.frame.origin.y != 0.0{
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
     }
-    
 }
+    
+extension MessageViewController {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 15
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = "ok"
+        
+        return cell
+    }
+}
+

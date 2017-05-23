@@ -43,9 +43,6 @@ class MessageView: UIView {
         messageTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4.0).isActive = true
         messageTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0).isActive = true
         messageTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0).isActive = true
-        //messageTextField.topAnchor.constraint(equalTo: messageTableView.bottomAnchor).isActive = true
         messageTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
     }
-    
-
 }
