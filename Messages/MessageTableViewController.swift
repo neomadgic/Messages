@@ -8,30 +8,32 @@
 
 import UIKit
 
-class MessageTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension MessageViewController {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 11
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        cell.textLabel?.text = "ok"
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell {
+            
+            cell.configureCell(with: "Testing a hahahahah")
+            
+            return cell
+        } else {
+            return MessageCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return cell
+        return UITableViewAutomaticDimension
     }
 }

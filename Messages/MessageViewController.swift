@@ -19,6 +19,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         createMessageView()
         messageView.messageTableView.delegate = self
         messageView.messageTableView.dataSource = self
+        messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,24 +67,24 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 }
     
-extension MessageViewController {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 15
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        
-        cell.textLabel?.text = "ok"
-        
-        return cell
-    }
-}
+//extension MessageViewController {
+//    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//        return 15
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+//        
+//        cell.textLabel?.text = "ok"
+//        
+//        return cell
+//    }
+//}
 

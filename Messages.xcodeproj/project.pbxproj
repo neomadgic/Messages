@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76D833781ED4C94B001B878D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833771ED4C94B001B878D /* MessageCell.swift */; };
+		76D8337A1ED4CC3E001B878D /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833791ED4CC3E001B878D /* MessageLabel.swift */; };
 		76E5C05D1ED3BBD90068BADC /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */; };
-		76E5C05F1ED3BBFC0068BADC /* MessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5C05E1ED3BBFC0068BADC /* MessageCellTableViewCell.swift */; };
 		76E5C0611ED3DA730068BADC /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5C0601ED3DA730068BADC /* MessageTableViewController.swift */; };
 		76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3C71ED213F60055C858 /* AppDelegate.swift */; };
 		76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3CE1ED213F60055C858 /* Messages.xcdatamodeld */; };
@@ -31,8 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76D833771ED4C94B001B878D /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		76D833791ED4CC3E001B878D /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
-		76E5C05E1ED3BBFC0068BADC /* MessageCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCellTableViewCell.swift; sourceTree = "<group>"; };
 		76E5C0601ED3DA730068BADC /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		76FEF3C41ED213F60055C858 /* Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FEF3C71ED213F60055C858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +111,9 @@
 			children = (
 				76FEF3FA1ED245100055C858 /* MessageView.swift */,
 				76FEF3F41ED22AC40055C858 /* MessageTextField.swift */,
+				76D833791ED4CC3E001B878D /* MessageLabel.swift */,
 				76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */,
-				76E5C05E1ED3BBFC0068BADC /* MessageCellTableViewCell.swift */,
+				76D833771ED4C94B001B878D /* MessageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -248,10 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */,
+				76D8337A1ED4CC3E001B878D /* MessageLabel.swift in Sources */,
+				76D833781ED4C94B001B878D /* MessageCell.swift in Sources */,
 				76FEF3F31ED218C40055C858 /* MessageViewController.swift in Sources */,
 				76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */,
 				76FEF3F51ED22AC40055C858 /* MessageTextField.swift in Sources */,
-				76E5C05F1ED3BBFC0068BADC /* MessageCellTableViewCell.swift in Sources */,
 				76FEF3FB1ED245100055C858 /* MessageView.swift in Sources */,
 				76E5C0611ED3DA730068BADC /* MessageTableViewController.swift in Sources */,
 				76E5C05D1ED3BBD90068BADC /* MessageTableView.swift in Sources */,

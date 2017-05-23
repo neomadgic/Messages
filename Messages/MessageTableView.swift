@@ -26,5 +26,6 @@ class MessageTableView: UITableView {
         
         translatesAutoresizingMaskIntoConstraints = false
         separatorStyle = .none
+        allowsSelection = false
     }
 }
