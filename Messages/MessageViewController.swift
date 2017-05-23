@@ -16,12 +16,11 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.cyan
         createMessageView()
-        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        addKeyboardNotifications()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        
+        removeKeyboardNotifications()
     }
     
     func createMessageView() {
@@ -31,6 +30,16 @@ class MessageViewController: UIViewController {
         messageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         messageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         messageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+    }
+    
+    func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func keyboardWillShow(notification: NSNotification) {
