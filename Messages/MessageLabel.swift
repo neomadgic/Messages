@@ -23,7 +23,7 @@ class MessageLabel: UILabel {
     func setupLabelSettings() {
         
         numberOfLines = 0
-        backgroundColor = UIColor(0x007AFF)
+        backgroundColor = UIColor.mainBlue
         textColor = UIColor.white
         layer.cornerRadius = 8.0
         clipsToBounds = true

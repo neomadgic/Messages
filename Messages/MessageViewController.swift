@@ -14,12 +14,11 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.cyan
+        self.view.backgroundColor = UIColor.white
         addKeyboardNotifications()
         createMessageView()
         messageView.messageTableView.delegate = self
         messageView.messageTableView.dataSource = self
-        messageView.messageTextField.delegate = self
         messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
     }
 
@@ -64,11 +63,6 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 

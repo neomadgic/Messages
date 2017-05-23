@@ -24,6 +24,6 @@ class MessageCell: UITableViewCell {
         messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2.0).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0).isActive = true
-        messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50.0).isActive = true
+        messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60.0).isActive = true
     }
 }

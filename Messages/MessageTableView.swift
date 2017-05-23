@@ -13,7 +13,7 @@ class MessageTableView: UITableView {
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
-        backgroundColor = UIColor.purple
+        backgroundColor = UIColor.white
         
         setTableViewSettings()
     }
