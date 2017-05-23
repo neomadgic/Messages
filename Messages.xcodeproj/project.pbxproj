@@ -105,8 +105,8 @@
 		76FEF3EE1ED217270055C858 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76FEF3F41ED22AC40055C858 /* MessageTextField.swift */,
 				76FEF3FA1ED245100055C858 /* MessageView.swift */,
+				76FEF3F41ED22AC40055C858 /* MessageTextField.swift */,
 				76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */,
 				76E5C05E1ED3BBFC0068BADC /* MessageCellTableViewCell.swift */,
 			);
