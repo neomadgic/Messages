@@ -16,15 +16,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
         addKeyboardNotifications()
         createMessageView()
-        messageView.messageTableView.delegate = self
-        messageView.messageTableView.dataSource = self
-        messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
-        
-        messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: [.touchUpInside, .touchUpOutside])
-        messageView.sendButton.addTarget(self, action: #selector(onSendHeldDown), for: .touchDown)
+        setTableViewSettings()
+        addFunctionToSendButton()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,10 +65,14 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func onSendPressed() {
+    func onSendButtonReleased() {
+        
+        // invalidate timer so heldDownSuccess does not trigger
         if timer != nil {
             timer!.invalidate()
         }
+        
+        // If message is sent from the user, send message as user, else reset settings
         if isSentFromUser {
             if messageView.messageTextField.text != nil {
                 CoreDataService.instance.add(text: messageView.messageTextField.text!, from: true)
@@ -84,7 +83,9 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func onSendHeldDown() {
+    func onSendPressed() {
+        
+        //Create a timer to determine if send is held
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(heldDownSuccess), userInfo: nil, repeats: false)
     }
     
@@ -96,11 +97,26 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         isSentFromUser = false
     }
     
+    
+    //Resets Textfield, reload the table, then scrolls to the bottom of TableView
     func refreshView() {
         
         messageView.messageTextField.text = ""
         messageView.messageTableView.reloadData()
         messageView.messageTableView.scrollToRow(at: NSIndexPath(row: CoreDataService.instance.getArray().count - 1, section: 0) as IndexPath, at: .bottom, animated: false)
+    }
+    
+    // Set Tableview Delegates, Data Source, and ReuseIdentifier
+    func setTableViewSettings() {
+        messageView.messageTableView.delegate = self
+        messageView.messageTableView.dataSource = self
+        messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
+    }
+    
+    func addFunctionToSendButton() {
+        
+        messageView.sendButton.addTarget(self, action: #selector(onSendButtonReleased), for: [.touchUpInside, .touchUpOutside])
+        messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: .touchDown)
     }
 }
 

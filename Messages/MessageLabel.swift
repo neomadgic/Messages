@@ -13,7 +13,6 @@ class MessageLabel: UILabel {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        //setupLabelSettings()
     }
     
     convenience init(frame: CGRect, isFromUser: Bool) {
@@ -27,14 +26,13 @@ class MessageLabel: UILabel {
     
     func setupLabelSettings(with: Bool) {
         
+        // Create Universal Settings for Message Label
         numberOfLines = 0
-        //backgroundColor = UIColor.mainBlue
-        //textColor = UIColor.white
         layer.cornerRadius = 8.0
         clipsToBounds = true
         font = UIFont(name: "Helvetica", size: 16.0)
-        //textAlignment = .right
         
+        // Set up settings depending on whether User sent it or the other person.
         if with == true {
             backgroundColor = UIColor.mainBlue
             textColor = UIColor.white

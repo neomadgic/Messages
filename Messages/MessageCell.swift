@@ -18,37 +18,41 @@ class MessageCell: UITableViewCell {
             return
         }
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        let messageLabel = MessageLabel(frame: CGRect.zero, isFromUser: isFromUser)
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        clearCellFromReuse()
+        createMessageLabel(with: message, from: isFromUser)
+    }
+    
+    // This function adds a white UIView to cover up reused cells from showing.
+    func clearCellFromReuse() {
+        let blankView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 25.0))
+        blankView.backgroundColor = UIColor.white
+        self.addSubview(blankView)
         
+        //create Constraints
+        blankView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        blankView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        blankView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        blankView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+    }
+    
+    func createMessageLabel(with: String, from: Bool) {
+        
+        let messageLabel = MessageLabel(frame: CGRect.zero, isFromUser: from)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.text = with
         addSubview(messageLabel)
         
-        messageLabel.text = message
-        
+        //Create Constraints
         messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2.0).isActive = true
         
-        if isFromUser {
+        // Create Constraints depending on whether message is sent from User or other person
+        if from == true{
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0).isActive = true
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60.0).isActive = true
         } else {
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60.0).isActive = true
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0).isActive = true
         }
-        
-        clearCell()
-        messageLabel.superview?.bringSubview(toFront: messageLabel)
-        
-    }
-    
-    func clearCell() {
-        let blankView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 25.0))
-        blankView.backgroundColor = UIColor.white
-        self.addSubview(blankView)
-        blankView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        blankView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        blankView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        blankView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     }
 }

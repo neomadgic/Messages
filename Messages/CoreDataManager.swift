@@ -26,6 +26,7 @@ class CoreDataService {
         return appDelegate.persistentContainer.viewContext
     }
     
+    // Returns the current array in CoreData
     func getArray() -> [NSManagedObject] {
         
         var messageArray = [NSManagedObject]()
@@ -43,6 +44,7 @@ class CoreDataService {
         return messageArray
     }
     
+    // Function to add to Core Data
     func add(text: String, from: Bool) {
 
         let moc = self.getContext()
@@ -57,19 +59,7 @@ class CoreDataService {
         self.save(context: moc)
     }
     
-    func getTextMessage(at: Int) -> NSManagedObject? {
-        let moc = getContext()
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TextMessage")
-        let result = try? moc.fetch(fetchRequest)
-        
-        guard result?[at] != nil else {
-            print("Failed to fetch Observation")
-            return nil
-        }
-        
-        return result![at]
-    }
-    
+    // Saves the current Data
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()

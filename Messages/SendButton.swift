@@ -20,6 +20,7 @@ class SendButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Setup UI of Send Button
     func setUpButton() {
         
         translatesAutoresizingMaskIntoConstraints = false

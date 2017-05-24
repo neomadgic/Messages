@@ -25,7 +25,6 @@ extension MessageViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell {
             
             cell.configureCell(with: CoreDataService.instance.getArray()[indexPath.row])
-            
             return cell
         } else {
             return MessageCell()
