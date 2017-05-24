@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7674E8B41ED5543900CDA460 /* NameInNavigationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674E8B31ED5543900CDA460 /* NameInNavigationLabel.swift */; };
 		76D833781ED4C94B001B878D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833771ED4C94B001B878D /* MessageCell.swift */; };
 		76D8337A1ED4CC3E001B878D /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833791ED4CC3E001B878D /* MessageLabel.swift */; };
 		76D8337D1ED4EA8B001B878D /* UIColorHexConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D8337C1ED4EA8B001B878D /* UIColorHexConversion.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7674E8B31ED5543900CDA460 /* NameInNavigationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInNavigationLabel.swift; sourceTree = "<group>"; };
 		76D833771ED4C94B001B878D /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		76D833791ED4CC3E001B878D /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		76D8337C1ED4EA8B001B878D /* UIColorHexConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHexConversion.swift; sourceTree = "<group>"; };
@@ -106,8 +108,8 @@
 		76FEF3C61ED213F60055C858 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				76D8337B1ED4EA76001B878D /* Extensions */,
 				76FEF3F11ED217360055C858 /* Essential */,
+				76D8337B1ED4EA76001B878D /* Extensions */,
 				76FEF3EF1ED2172C0055C858 /* Model */,
 				76FEF3EE1ED217270055C858 /* View */,
 				76FEF3F01ED2172F0055C858 /* Controller */,
@@ -130,6 +132,7 @@
 				76FEF3FA1ED245100055C858 /* MessageView.swift */,
 				76FEF3F41ED22AC40055C858 /* MessageTextField.swift */,
 				76D833791ED4CC3E001B878D /* MessageLabel.swift */,
+				7674E8B31ED5543900CDA460 /* NameInNavigationLabel.swift */,
 				76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */,
 				76D833771ED4C94B001B878D /* MessageCell.swift */,
 				76D8337E1ED4EF2A001B878D /* SendButton.swift */,
@@ -272,6 +275,7 @@
 			files = (
 				76D833811ED4EFA7001B878D /* UIColorListOfColors.swift in Sources */,
 				76D8337F1ED4EF2A001B878D /* SendButton.swift in Sources */,
+				7674E8B41ED5543900CDA460 /* NameInNavigationLabel.swift in Sources */,
 				76FEF3D01ED213F60055C858 /* Messages.xcdatamodeld in Sources */,
 				76D8337A1ED4CC3E001B878D /* MessageLabel.swift in Sources */,
 				76D833781ED4C94B001B878D /* MessageCell.swift in Sources */,

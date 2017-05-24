@@ -20,6 +20,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         createMessageView()
         setTableViewSettings()
         addFunctionToSendButton()
+        createNavigationLabel()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,6 +118,12 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         messageView.sendButton.addTarget(self, action: #selector(onSendButtonReleased), for: [.touchUpInside, .touchUpOutside])
         messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: .touchDown)
+    }
+    
+    func createNavigationLabel() {
+        
+        let navigationTitlelabel = NameInNavigationLabel(frame: CGRect(x: 0.0, y: 0.0, width: 201.0, height: 21.0))
+        self.navigationController!.navigationBar.topItem!.titleView = navigationTitlelabel
     }
 }
 

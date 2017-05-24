@@ -24,7 +24,9 @@ class MessageCell: UITableViewCell {
     
     // This function adds a white UIView to cover up reused cells from showing.
     func clearCellFromReuse() {
+        
         let blankView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 25.0))
+        blankView.translatesAutoresizingMaskIntoConstraints = false
         blankView.backgroundColor = UIColor.white
         self.addSubview(blankView)
         
