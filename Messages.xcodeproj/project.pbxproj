@@ -12,6 +12,7 @@
 		76D8337D1ED4EA8B001B878D /* UIColorHexConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D8337C1ED4EA8B001B878D /* UIColorHexConversion.swift */; };
 		76D8337F1ED4EF2A001B878D /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D8337E1ED4EF2A001B878D /* SendButton.swift */; };
 		76D833811ED4EFA7001B878D /* UIColorListOfColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833801ED4EFA7001B878D /* UIColorListOfColors.swift */; };
+		76D833831ED50C96001B878D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D833821ED50C96001B878D /* CoreDataManager.swift */; };
 		76E5C05D1ED3BBD90068BADC /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */; };
 		76E5C0611ED3DA730068BADC /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5C0601ED3DA730068BADC /* MessageTableViewController.swift */; };
 		76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEF3C71ED213F60055C858 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		76D8337C1ED4EA8B001B878D /* UIColorHexConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHexConversion.swift; sourceTree = "<group>"; };
 		76D8337E1ED4EF2A001B878D /* SendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
 		76D833801ED4EFA7001B878D /* UIColorListOfColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorListOfColors.swift; sourceTree = "<group>"; };
+		76D833821ED50C96001B878D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		76E5C05C1ED3BBD90068BADC /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
 		76E5C0601ED3DA730068BADC /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		76FEF3C41ED213F60055C858 /* Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messages.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 		76FEF3EF1ED2172C0055C858 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D833821ED50C96001B878D /* CoreDataManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				76D833781ED4C94B001B878D /* MessageCell.swift in Sources */,
 				76FEF3F31ED218C40055C858 /* MessageViewController.swift in Sources */,
 				76FEF3C81ED213F60055C858 /* AppDelegate.swift in Sources */,
+				76D833831ED50C96001B878D /* CoreDataManager.swift in Sources */,
 				76FEF3F51ED22AC40055C858 /* MessageTextField.swift in Sources */,
 				76FEF3FB1ED245100055C858 /* MessageView.swift in Sources */,
 				76D8337D1ED4EA8B001B878D /* UIColorHexConversion.swift in Sources */,

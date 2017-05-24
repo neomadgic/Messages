@@ -13,4 +13,5 @@ extension UIColor {
     
     static let mainBlue = UIColor(0x007AFF)
     static let mainGreen = UIColor(0x69DB88)
+    static let textBackgroundGray = UIColor(0xF0F0F0)
 }

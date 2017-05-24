@@ -17,14 +17,14 @@ extension MessageViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 25
+        return CoreDataService.instance.getArray().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell {
             
-            cell.configureCell(with: "Testing")
+            cell.configureCell(with: CoreDataService.instance.getArray()[indexPath.row])
             
             return cell
         } else {

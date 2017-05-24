@@ -11,6 +11,8 @@ import UIKit
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let messageView = MessageView()
+    var timer: Timer?
+    var isSentFromUser = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,8 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         messageView.messageTableView.dataSource = self
         messageView.messageTableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
         
-        messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: .touchUpInside)
+        messageView.sendButton.addTarget(self, action: #selector(onSendPressed), for: [.touchUpInside, .touchUpOutside])
+        messageView.sendButton.addTarget(self, action: #selector(onSendHeldDown), for: .touchDown)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,7 +71,36 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func onSendPressed() {
-        print("WE MADE IT")
+        if timer != nil {
+            timer!.invalidate()
+        }
+        if isSentFromUser {
+            if messageView.messageTextField.text != nil {
+                CoreDataService.instance.add(text: messageView.messageTextField.text!, from: true)
+                refreshView()
+            }
+        } else {
+            isSentFromUser = true
+        }
+    }
+    
+    func onSendHeldDown() {
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(heldDownSuccess), userInfo: nil, repeats: false)
+    }
+    
+    func heldDownSuccess() {
+        if messageView.messageTextField.text != nil {
+            CoreDataService.instance.add(text: messageView.messageTextField.text!, from: false)
+            refreshView()
+        }
+        isSentFromUser = false
+    }
+    
+    func refreshView() {
+        
+        messageView.messageTextField.text = ""
+        messageView.messageTableView.reloadData()
+        messageView.messageTableView.scrollToRow(at: NSIndexPath(row: CoreDataService.instance.getArray().count - 1, section: 0) as IndexPath, at: .bottom, animated: false)
     }
 }
 

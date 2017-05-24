@@ -13,22 +13,37 @@ class MessageLabel: UILabel {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        setupLabelSettings()
+        //setupLabelSettings()
+    }
+    
+    convenience init(frame: CGRect, isFromUser: Bool) {
+        self.init(frame:frame)
+        setupLabelSettings(with: isFromUser)
     }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLabelSettings() {
+    func setupLabelSettings(with: Bool) {
         
         numberOfLines = 0
-        backgroundColor = UIColor.mainBlue
-        textColor = UIColor.white
+        //backgroundColor = UIColor.mainBlue
+        //textColor = UIColor.white
         layer.cornerRadius = 8.0
         clipsToBounds = true
         font = UIFont(name: "Helvetica", size: 16.0)
-        textAlignment = .right
+        //textAlignment = .right
+        
+        if with == true {
+            backgroundColor = UIColor.mainBlue
+            textColor = UIColor.white
+            textAlignment = .right
+        } else {
+            backgroundColor = UIColor.textBackgroundGray
+            textColor = UIColor.black
+            textAlignment = .left
+        }
     }
     
     override func drawText(in rect: CGRect) {
